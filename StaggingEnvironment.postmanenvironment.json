@@ -1,0 +1,29 @@
+{
+	"id": "9741f109-56a2-46eb-ac77-ba18397c146b",
+	"name": "Stagging Environment",
+	"values": [
+		{
+			"key": "authUrl",
+			"value": "157.230.2.93:5000",
+			"enabled": true
+		},
+		{
+			"key": "userManagementUrl",
+			"value": "157.230.2.93:6000",
+			"enabled": true
+		},
+		{
+			"key": "auth_token",
+			"value": "",
+			"enabled": true
+		},
+		{
+			"key": "user_ID",
+			"value": "",
+			"enabled": true
+		}
+	],
+	"_postman_variable_scope": "environment",
+	"_postman_exported_at": "2020-10-02T01:34:15.120Z",
+	"_postman_exported_using": "Postman/7.32.0"
+}
