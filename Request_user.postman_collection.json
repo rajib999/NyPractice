@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "de95842f-efc6-4005-8b9b-9e59aed0511e",
+		"name": "Request_user",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. TFS- 355- Register Company Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "489c2bce-8db4-4b8c-a862-55a47f014ec4",
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});",
+							"",
+							"pm.test(\"Response time is less than 600ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(600);",
+							"});",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Techserve4U\",\n\t\"address\": \"Warren, Michigan\",\n\t\"tin\": \"12345678\"\n}",
+					"options": {
+						"raw": {}
+					}
+				},
+				"url": {
+					"raw": "{{authUrl}}/api/v1/panel/auth/register-company",
+					"host": [
+						"{{authUrl}}"
+					],
+					"path": [
+						"api",
+						"v1",
+						"panel",
+						"auth",
+						"register-company"
+					]
+				},
+				"description": "BDD: As a super admin, I want to register a company, so that a company is created. \n\nObjective: User should be able to register their company with their company information.\n\nTester need to pass these informations of the company's in the body section:\n\nPost Data: \n\tname -> string\n\taddress -> string\n\ttin -> string\n\tagreement_file -> string\n\tverification_file -> string"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
